@@ -1,0 +1,214 @@
+/* debugging :3 -> to see how elements take up space */
+/* *{
+  outline: 1px solid red;
+}  */
+
+
+/*COLORS:*/
+/*Link: https://coolors.co/palette/2b2024-9b6a6c-f7d08a-a5d8ff-fbf9fa */
+/*
+Darkest: #2B2024
+Brown-ish: #9B6A6C
+Yellow: #F7D08A
+Light Blue: #A5D8FF
+White: #FBF9FA
+*/
+
+
+/* FONT */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+.pixel-font{
+  font-family: "VT323", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/* STYLE SECTIONING TAGS */
+
+
+body {
+  background-color: #2B2024; 
+  color:#FBF9FA;
+  display:flex;
+  font-size:20px;
+}
+
+main{
+  flex:1; /*Take up remaining space :3 */
+  padding:3em;
+}
+
+aside, nav{
+  width:20%;
+  padding:2em;
+}
+
+nav, main, aside{
+  border:1px dashed #FBF9FA;
+}
+
+nav.portfolio{
+  width:35%;
+}
+
+#nav-section{ /*for things (like in the portfolio nav section) to stick to the top properly (& not scroll away)*/
+  position:sticky;
+  top:2em;
+}
+
+/* STYLE TEXT */
+
+  /*for basics:*/
+a{
+  color:#A5D8FF;
+  font-style:italic;
+}
+
+a:hover{
+  color:#F7D08A;
+}
+
+  /* in main on HOME PAGE: */
+#name-and-pronouns{
+  text-align:center;
+}
+
+.name{ /*this later gets reused in styling the nav section's main text of the page you're on*/
+  font-size:100px;
+  letter-spacing:-10px;
+  
+  color:#2B2024;
+  /*for outline effect:*/
+  text-shadow: -1px -1px 0 #FBF9FA, 1px -1px 0 #FBF9FA, -1px 1px 0 #FBF9FA, 5px 5px 0 #FBF9FA;
+}
+
+#pronouns{
+  font-size:20px;
+  font-style:italic;
+
+  color:#2B2024;
+  text-shadow: -1px -1px 0 #FBF9FA, 1px -1px 0 #FBF9FA, -1px 1px 0 #FBF9FA, 2px 2px 0 #FBF9FA; /*text ouline:*/
+}
+
+#subtitle{
+  margin:0;
+  color:#2B2024;
+  text-shadow: -1px -1px 0 #FBF9FA, 1px -1px 0 #FBF9FA, -1px 1px 0 #FBF9FA, 2px 2px 0 #FBF9FA; /*text ouline:*/
+}
+
+  /*for making little sections on pages!*/
+
+.title-of-sect{ /*Like "About Me" above para text in home page*/
+  /* structure: */
+  margin-bottom:0px; /*to get rid of default space below heading tag*/
+  margin-left:-15px; /*To move slightly to the left*/
+  
+  border:2px solid #FBF9FA;
+  border-radius:10px;
+  padding:5px;
+  padding-left:10px;
+  padding-right:10px;
+  display:inline-block;
+  background-color:#9B6A6C; 
+  /*text ouline:*/
+  text-shadow: -1px -1px 0 #2B2024, 1px -1px 0 #2B2024, -1px 1px 0 #2B2024, 2px 2px 0 #2B2024;
+}
+
+.section{ /*Like the About Me para text!*/
+  margin-top:-15px; /*to get rid of default space above para tag & to set "About Me" slightly over/on top of it*/
+  padding:20px;
+  z-index:-1; /*set it behind the title/"About Me"*/
+  border:2px dotted #FBF9FA;
+}
+
+/*Makes it so the ul List (like in the Fun Facts section) behaves properly w/ Section & Title of it! >:3*/
+ul.section{
+  list-style:disc inside;
+  margin:0;
+  margin-top:-8px;
+  padding:10px;
+}
+
+/* STYLE IMAGES */
+
+
+  /* Home page!! */
+#pfp{
+  width:200px;
+  
+  /*To center: */
+  display:block;
+  margin-right:auto;
+  margin-left:auto;
+  
+  border:5px dashed #FBF9FA;
+  outline:5px dashed #2B2024;
+  filter: drop-shadow(5px 5px 5px #FBF9FA);
+
+  /*just for top/bottom to push away deco borders*/
+  margin-top:40px; 
+  margin-bottom:40px;
+  
+  /*For circle effect:*/
+  object-fit:cover;
+  border-radius:50%;
+}
+
+.deco-border-pfp{
+  width:150px;
+  filter:invert(1); /*make it negative/white*/
+  
+  /*to center*/
+  display:block; 
+  margin-right:auto;
+  margin-left:auto;
+}
+
+#bottom-border{
+  transform:rotate(180deg);
+  margin-bottom:30px; /*put more space between it and name*/
+}
+
+  /*for portfolio page!1*/
+
+.project-image{
+  width:100%;
+  border:5px solid #FBF9FA;
+  border-radius:10px;
+}
+
+/* STYLE NAV BAR */
+
+nav .section{
+  list-style-type:none;
+  margin-top:-10px;
+}
+nav li{
+  padding-top:5px;
+  padding-bottom:5px;
+}
+nav h5{
+  margin:0;
+  padding:0;
+}
+nav a{
+  color:#FBF9FA;
+  text-decoration:none;
+  font-style:normal;
+}
+
+/*for the little jumping Pin right by the page you are on!!*/
+.jumping-text{
+  display:inline-block;
+  animation:jump 1s ease-in-out infinite;
+}
+
+@keyframes jump{
+  0%, 100%{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(-3px);
+  }
+}
